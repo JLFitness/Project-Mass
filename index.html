@@ -3,21 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Mass — Build Muscle Fast</title>
+    <title>Project Mass</title>
+
     <style>
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f6f6f6;
+            font-family: 'Inter', Arial, sans-serif;
             color: #111;
+            background: #ffffff;
+            line-height: 1.6;
         }
 
-        /* -------------------- GLOBAL SETTINGS -------------------- */
-
+        /* Layout */
         .section {
-            width: 100%;
-            padding: 60px 20px;
-            box-sizing: border-box;
+            padding: 90px 20px;
         }
 
         .container {
@@ -27,54 +26,48 @@
         }
 
         h1, h2, h3 {
-            margin: 0 0 20px 0;
-            font-weight: 700;
+            margin: 0 0 25px 0;
+            font-weight: 800;
         }
 
         p {
             margin: 0 auto 20px auto;
             max-width: 650px;
-            line-height: 1.6;
-            font-size: 18px;
-        }
-
-        /* -------------------- CTA BUTTON -------------------- */
-
-        .btn-primary {
-            background: #111;
-            color: white;
-            padding: 16px 28px;
-            border: none;
-            border-radius: 6px;
             font-size: 20px;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 25px;
-            transition: 0.2s;
         }
 
-        .btn-primary:hover {
+        /* CTA button */
+        .btn {
+            display: inline-block;
+            padding: 18px 34px;
+            background: #111;
+            color: #fff;
+            text-decoration: none;
+            font-size: 22px;
+            border-radius: 6px;
+            transition: 0.25s;
+            margin-top: 30px;
+            font-weight: 600;
+        }
+
+        .btn:hover {
             background: #333;
         }
 
-        /* -------------------- HERO SECTION -------------------- */
-
+        /* Hero */
         .hero {
-            background: white;
-            padding-top: 80px;
-            padding-bottom: 80px;
-            border-bottom: 1px solid #ddd;
+            padding-top: 120px;
+            padding-bottom: 120px;
         }
 
         .vsl {
             width: 100%;
-            max-width: 700px;
-            height: 400px;
-            margin: 40px auto 0 auto;
-            border-radius: 10px;
+            max-width: 780px;
+            margin: 50px auto 0 auto;
+            aspect-ratio: 16/9;
+            border-radius: 14px;
             overflow: hidden;
-            background: #000;
+            background: black;
         }
 
         iframe {
@@ -82,61 +75,53 @@
             height: 100%;
         }
 
-        /* -------------------- FEATURE GRID -------------------- */
-
+        /* Features (3 rows, minimalist) */
         .features {
-            background: #fff;
+            background: #fafafa;
         }
 
         .feature-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
+            gap: 50px;
+            margin-top: 60px;
         }
 
-        .feature {
-            padding: 25px;
-            background: #f1f1f1;
-            border-radius: 12px;
-            font-size: 17px;
+        .feature h3 {
+            margin-bottom: 15px;
+            font-size: 22px;
         }
 
-        /* -------------------- TESTIMONIALS -------------------- */
-
-        .testimonials {
-            background: #fafafa;
-        }
-
+        /* Testimonials */
         .testimonial-box {
-            background: white;
-            border-radius: 10px;
-            padding: 25px;
-            margin: 20px auto;
+            margin: 35px auto;
             max-width: 700px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.06);
+            font-size: 19px;
         }
 
-        /* -------------------- FINAL CTA -------------------- */
+        .testimonial-box strong {
+            display: block;
+            margin-top: 10px;
+            font-size: 18px;
+        }
 
+        /* Final CTA */
         .final-cta {
+            padding: 120px 20px;
             background: #111;
             color: white;
-            padding: 80px 20px;
-            text-align: center;
         }
 
         .final-cta p {
-            color: #ddd;
+            color: #eee;
         }
 
-        .final-cta .btn-primary {
+        .final-cta .btn {
             background: white;
             color: #111;
-            font-weight: bold;
         }
 
-        .final-cta .btn-primary:hover {
+        .final-cta .btn:hover {
             background: #ddd;
         }
     </style>
@@ -144,18 +129,17 @@
 
 <body>
 
-<!-- HERO (TOP PART REMAINS ALMOST IDENTICAL) -->
+<!-- HERO -->
 <section class="hero section">
     <div class="container">
-        <h1>Skinny Guys: This Is How You Actually Build Muscle Faster</h1>
-        <p>Stop guessing. Stop spinning your wheels. Follow the exact strategy designed for skinny guys who struggle to gain size.</p>
+        <h1>Skinny Guys: This Is How You Actually Build Muscle</h1>
+        <p>Stop eating randomly. Stop doing “everything and nothing.” Follow the system built specifically for guys who can’t gain weight.</p>
 
-        <a href="#checkout" class="btn-primary">Get Project Mass</a>
+        <a href="#checkout" class="btn">Get Project Mass</a>
 
-        <!-- VSL EMBED -->
         <div class="vsl">
             <iframe 
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
                 title="Project Mass VSL"
                 frameborder="0"
                 allowfullscreen>
@@ -165,52 +149,52 @@
 </section>
 
 <!-- FEATURES -->
-<section class="features section">
+<section class="section features">
     <div class="container">
-        <h2>What You Get Inside Project Mass</h2>
-        <p>No fluff. No overcomplication. Just what actually works for skinny guys who want to gain weight quickly and consistently.</p>
+        <h2>Inside Project Mass</h2>
+        <p>The exact blueprint to go from underweight to solid and strong — without overcomplicating anything.</p>
 
         <div class="feature-grid">
             <div class="feature">
-                <h3>✔ Bulking Blueprint</h3>
-                <p>The exact calorie, macro, and meal structure that rapidly puts size on hardgainers.</p>
+                <h3>Bulking Framework</h3>
+                <p>The step-by-step eating system that forces your body to gain size consistently.</p>
             </div>
 
             <div class="feature">
-                <h3>✔ Training Program</h3>
-                <p>4–5 day optimized muscle-building routine designed specifically for ectomorphs.</p>
+                <h3>Training Program</h3>
+                <p>A simple, progressive routine designed for skinny guys who want visible muscle fast.</p>
             </div>
 
             <div class="feature">
-                <h3>✔ Video Lessons</h3>
-                <p>Clear, no-BS breakdowns of what matters and what doesn't for gaining mass.</p>
+                <h3>Video Lessons</h3>
+                <p>Short, straight-to-the-point lessons on exactly what matters (and what doesn’t).</p>
             </div>
 
             <div class="feature">
-                <h3>✔ Accountability System</h3>
-                <p>The habits, structure, and weekly check-in system to guarantee progress.</p>
+                <h3>Accountability System</h3>
+                <p>Weekly structure so you can’t fall off — you will gain size if you follow it.</p>
             </div>
         </div>
     </div>
 </section>
 
 <!-- TESTIMONIALS -->
-<section class="testimonials section">
+<section class="section">
     <div class="container">
-        <h2>Real Results From Real Skinny Guys</h2>
+        <h2>Real Skinny Guys. Real Results.</h2>
 
         <div class="testimonial-box">
-            <p>"I’ve been underweight my entire life. Project Mass is the first thing that actually worked. I gained 6kg in 7 weeks."</p>
+            <p>"This program finally made things click. I went from 63kg to 69kg in under 2 months."</p>
             <strong>- Daniel</strong>
         </div>
 
         <div class="testimonial-box">
-            <p>"The structure is so simple. The eating framework alone was worth the money."</p>
+            <p>"The eating plan alone made all the difference. Zero fluff — just what works."</p>
             <strong>- Josh</strong>
         </div>
 
         <div class="testimonial-box">
-            <p>"I stopped wasting time. The plan tells you exactly what to do step by step."</p>
+            <p>"If you're a skinny dude who can't gain weight, this is exactly what you need. Period."</p>
             <strong>- Sam</strong>
         </div>
     </div>
@@ -218,9 +202,9 @@
 
 <!-- FINAL CTA -->
 <section class="final-cta" id="checkout">
-    <h2>Ready To Finally Build Muscle?</h2>
-    <p>Stop spinning your wheels. Follow the system designed for skinny guys who want real size.</p>
-    <a href="#" class="btn-primary">Join Project Mass Now</a>
+    <h2>Ready To Build Muscle Properly?</h2>
+    <p>If you’re done guessing and want a system built for your body type — start now.</p>
+    <a href="#" class="btn">Join Project Mass</a>
 </section>
 
 </body>
