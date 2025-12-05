@@ -1,274 +1,219 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Project Mass — 16-Week Mass System</title>
-  <meta name="description" content="Project Mass helps skinny men gain 4–8kg of solid muscle and strength in 16 weeks with custom training, nutrition and daily accountability.">
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Project Mass — 16-Week Muscle & Strength System</title>
+  <meta name="description" content="Project Mass helps naturally skinny men gain 4–8 kg of lean size and strength in 16 weeks — no fluff, just results.">
   <style>
-    :root{
-      --bg:#0f0f10;
-      --panel:#121212;
-      --muted:#bdbdbd;
-      --accent:#ff6b35;
-      --white:#fff;
-      --max:1100px;
+    /* reset / base */
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { background:#0f0f10; color:#eee; font-family:Arial, sans-serif; line-height:1.5; }
+    a { color:inherit; text-decoration:none; }
+    .wrap { max-width:1100px; margin:0 auto; padding:0 20px; }
+
+    header { padding: 20px 0; text-align:center; }
+    .brand { font-size:1.6rem; font-weight:700; letter-spacing:2px; }
+
+    .hero { text-align:center; padding:80px 0 50px; }
+    .hero .subkicker { font-size:1rem; color:#aaa; margin-bottom:8px; }
+    .hero h1 { font-size:2.8rem; line-height:1.1; margin-bottom:20px; }
+    .hero p.sub { font-size:1.15rem; color:#cfcfcf; margin-bottom:12px; }
+    .hero p.guarantee { font-size:0.9rem; color:#999; margin-bottom:30px; }
+
+    .vsl-container { max-width:800px; margin: 0 auto 40px; }
+    .vsl-container iframe { width:100%; height:450px; border:0; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,0.7); }
+
+    .cta-btn { display:inline-block; background:#ff6b35; color:#fff; padding:16px 32px; border-radius:8px; font-size:1.15rem; font-weight:600; transition: background 0.2s; }
+    .cta-btn:hover { background:#e05528; }
+
+    section { padding:60px 0; }
+    section.alt { background:#121212; }
+
+    h2 { font-family:Arial, sans-serif; font-size:2rem; margin-bottom:18px; text-align:center; }
+    .lead { color:#cfcfcf; font-size:1.1rem; text-align:center; max-width:900px; margin:0 auto 24px; }
+
+    ul.simple-list { list-style: none; max-width:800px; margin:0 auto; padding-left:0; color:#ddd; }
+    ul.simple-list li { padding:10px 0; border-bottom:1px dashed rgba(255,255,255,0.1); }
+
+    .grid-3 { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:24px; }
+    .feature { background:rgba(255,255,255,0.03); padding:24px; border-radius:8px; }
+    .feature h4 { margin-bottom:8px; font-size:1.2rem; }
+    .feature p { color:#ccc; font-size:1rem; }
+
+    .center { text-align:center; }
+
+    .pricing { background:rgba(255,255,255,0.05); padding:40px 0; }
+    .price-box { background:#1a1a1a; padding:28px; border-radius:8px; max-width:360px; margin:0 auto; text-align:center; }
+    .price-box .price-title { font-size:1.2rem; font-weight:700; margin-bottom:12px; color:#fff; }
+    .price-box .price-amount { font-size:2rem; font-weight:800; margin-bottom:20px; }
+    .price-box .price-btn { background:#ff6b35; color:#fff; padding:12px 28px; border-radius:6px; font-size:1rem; font-weight:600; }
+
+    .faq details { background:rgba(255,255,255,0.03); padding:16px; border-radius:6px; margin-bottom:12px; }
+    .faq summary { font-weight:600; cursor:pointer; }
+    .faq p { margin-top:8px; color:#ccc; }
+
+    footer { padding:24px 0; text-align:center; font-size:0.9rem; color:#777; }
+
+    @media (max-width:768px) {
+      .vsl-container iframe { height:250px; }
+      .hero h1 { font-size:2.2rem; }
     }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial;background:var(--bg);color:var(--white);-webkit-font-smoothing:antialiased}
-    .wrap{max-width:var(--max);margin:0 auto;padding:28px 20px}
-    .site-header{border-bottom:1px solid rgba(255,255,255,0.03);background:transparent;position:sticky;top:0;z-index:40}
-    .header-inner{display:flex;align-items:center;justify-content:space-between}
-    .brand{font-weight:800;letter-spacing:1px;font-size:18px;color:var(--white)}
-    .nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-weight:600}
-    .btn-ghost{border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:6px}
-    .hero{padding:48px 0 28px}
-    .kicker{font-family:serif;font-size:18px;color:var(--muted);text-align:center;margin-bottom:6px}
-    .hero-title{text-align:center;font-size:36px;line-height:1.05;margin:6px 0 10px;font-weight:800}
-    .hero-sub{text-align:center;color:var(--muted);font-size:18px;margin-bottom:10px}
-    .guarantee{text-align:center;color:var(--muted);font-size:14px;margin-bottom:20px}
-    .vsl-row{display:flex;gap:30px;align-items:flex-start;flex-wrap:wrap;justify-content:center}
-    .vsl{flex:1 1 640px;max-width:900px}
-    .vsl iframe{width:100%;height:400px;border-radius:12px;border:0;box-shadow:0 12px 40px rgba(0,0,0,0.6)}
-    .hero-cta{width:320px;min-width:260px;display:flex;flex-direction:column;align-items:center;justify-content:center}
-    .btn-primary{background:var(--accent);color:var(--white);padding:16px 26px;border-radius:10px;text-decoration:none;font-weight:800;display:inline-block}
-    .micro{text-align:center;color:var(--muted);margin-top:12px;font-size:14px}
-    .section{padding:48px 0;border-top:1px solid rgba(255,255,255,0.02)}
-    .section.alt{background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent)}
-    h2{font-family:serif;font-size:26px;text-align:center;margin:0 0 14px}
-    .lead{text-align:center;color:var(--muted);max-width:900px;margin:0 auto 18px}
-    .bullets{max-width:900px;margin:0 auto 6px;padding-left:18px}
-    .bullets li{margin:8px 0;color:var(--muted);font-weight:600}
-    .two-col{display:grid;grid-template-columns:1fr 320px;gap:26px;align-items:start}
-    .card{background:rgba(255,255,255,0.02);padding:18px;border-radius:10px}
-    .clean-list{list-style:none;padding:0;margin:0}
-    .clean-list li{padding:10px 0;border-bottom:1px dashed rgba(255,255,255,0.03);font-weight:600;color:var(--muted)}
-    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:12px}
-    .feature{background:rgba(255,255,255,0.02);padding:18px;border-radius:10px}
-    .feature h4{margin:0 0 6px}
-    .center{text-align:center}
-    .pricing-card{display:flex;gap:20px;align-items:flex-start;justify-content:center;flex-wrap:wrap;margin-top:18px}
-    .price-tag{background:linear-gradient(90deg,#0b0b0b,#161616);padding:18px;border-radius:12px;min-width:280px}
-    .price-title{font-weight:800;font-size:18px}
-    .price-amount{font-weight:800;font-size:22px;margin-top:10px}
-    .price-features{list-style:none;padding:12px 0 0;margin:0;color:var(--muted)}
-    .price-features li{padding:8px 0}
-    .apply-wrap{text-align:center}
-    .btn-secondary{background:transparent;border:2px solid var(--accent);color:var(--accent);padding:12px 20px;border-radius:8px;text-decoration:none;font-weight:700}
-    .site-footer{border-top:1px solid rgba(255,255,255,0.02);padding:28px 0;margin-top:18px;color:var(--muted)}
-    .foot-inner{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
-    @media (max-width:900px){
-      .vsl iframe{height:220px}
-      .vsl-row{flex-direction:column}
-      .hero-title{font-size:28px}
-      .grid-3{grid-template-columns:1fr}
-      .two-col{grid-template-columns:1fr}
-      .header-inner{padding:8px 0}
-      .nav a{margin-left:10px;font-size:14px}
-      .brand{font-size:16px}
-    }
-    /* small helper */
-    .muted-small{color:var(--muted);font-size:13px;margin-top:8px}
   </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="wrap header-inner">
+
+  <header>
+    <div class="wrap">
       <div class="brand">PROJECT MASS</div>
-      <nav class="nav" aria-label="Main navigation">
-        <a href="#who">Who</a>
-        <a href="#why">Why</a>
-        <a href="#offer">Offer</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#faq">FAQ</a>
-        <a class="btn-ghost" href="#apply">Apply</a>
-      </nav>
     </div>
   </header>
 
   <main>
-    <!-- HERO / VSL -->
-    <section class="hero" role="banner">
-      <div class="wrap hero-inner">
-        <div class="kicker">The guide for hardgainers</div>
-        <h1 class="hero-title">Add 4–8 kg of solid size and get stronger in 16 weeks</h1>
-        <p class="hero-sub">A no-BS system for skinny guys — custom training, nutrition, and daily accountability.</p>
+    <section class="hero">
+      <div class="wrap">
+        <div class="subkicker">The guide for hardgainers</div>
+        <h1>Add 4–8 kg of solid size and get stronger in 16 weeks.</h1>
+        <p class="sub">A no-BS system for skinny guys — custom training, nutrition and daily accountability.</p>
         <p class="guarantee">30-day action-based money-back guarantee</p>
 
-        <div class="vsl-row" aria-hidden="false">
-          <div class="vsl" aria-label="Video">
-            <!-- REPLACE VIDEO_ID_HERE with your YouTube ID (or replace the iframe src with a Vimeo embed) -->
-            <iframe id="vslFrame" src="https://www.youtube.com/embed/VIDEO_ID_HERE?rel=0&showinfo=0"
-              title="Project Mass VSL" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-
-          <div class="hero-cta" role="region" aria-label="Call to action">
-            <a class="btn-primary" href="#apply">GET PROJECT MASS</a>
-            <div class="micro">Limited spots — small group coaching for focused results.</div>
-            <div class="muted-small">No spam. You’ll get the onboarding link and next steps after you apply.</div>
-          </div>
+        <div class="vsl-container">
+          <iframe src="https://www.youtube.com/embed/VIDEO_ID_HERE?rel=0&showinfo=0" 
+                  title="Project Mass VSL" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowfullscreen>
+          </iframe>
         </div>
+
+        <div class="center">
+          <a class="cta-btn" href="#apply">GET PROJECT MASS</a>
+        </div>
+
       </div>
     </section>
 
-    <!-- WHO -->
-    <section id="who" class="section" aria-labelledby="who-heading">
+    <section id="who">
       <div class="wrap">
-        <h2 id="who-heading">Who Project Mass Is For</h2>
-        <ul class="bullets" aria-label="Who this is for list">
-          <li>20–35, naturally skinny and fed up with not gaining weight.</li>
-          <li>Stuck at the same 3–5 kg range for months or years.</li>
-          <li>Train but lack a progressive hypertrophy plan and daily accountability.</li>
-          <li>Never tracked a consistent calorie surplus — want someone to remove guesswork.</li>
+        <h2>Who Project Mass Is For</h2>
+        <ul class="simple-list">
+          <li>20–35, naturally skinny, and tired of feeling weak or small.</li>
+          <li>Stuck at the same weight range for months or years.</li>
+          <li>Train with no consistent plan or clear results.</li>
+          <li>Never tracked calories properly, or tried dirty-bulks and failed.</li>
+          <li>Want a real system and daily accountability to finally make progress.</li>
         </ul>
       </div>
     </section>
 
-    <!-- WHY -->
-    <section id="why" class="section alt" aria-labelledby="why-heading">
-      <div class="wrap two-col">
-        <div>
-          <h2 id="why-heading">Why You Haven’t Gained Muscle Yet</h2>
-          <p class="lead">You’re not broken — your system is. These are the real reasons hardgainers fail:</p>
-          <ul class="clean-list" aria-label="Reasons list">
-            <li><strong>Under-eating:</strong> You think you eat enough but you’re not in a real surplus.</li>
-            <li><strong>Random training:</strong> No measurable progressive overload or hypertrophy focus.</li>
-            <li><strong>No accountability:</strong> You fall off after 7–10 days and never build the habit.</li>
-            <li><strong>False starts:</strong> Clean eating instead of consistent calories.</li>
-          </ul>
-        </div>
-        <aside class="card" aria-label="Unique mechanism">
-          <h3>The Mass Foundations Framework</h3>
-          <p>Targeted training + calorie-accurate nutrition + daily behaviour tracking — a repeatable system that forces progress for hardgainers.</p>
-        </aside>
+    <section class="alt" id="why">
+      <div class="wrap">
+        <h2>Why You Haven’t Gained Real Size Yet</h2>
+        <p class="lead">It’s not you — it’s your approach. Here are the real reasons most skinny guys stay stuck:</p>
+        <ul class="simple-list">
+          <li>You underestimate how much you need to eat — no true surplus ever hit.</li>
+          <li>Your workouts are random or lack progressive overload.</li>
+          <li>No accountability — easy to skip meals or workouts when motivation dips.</li>
+          <li>You’ve done dirty-bulks, crashed, and wasted months without results.</li>
+        </ul>
       </div>
     </section>
 
-    <!-- OFFER -->
-    <section id="offer" class="section" aria-labelledby="offer-heading">
+    <section id="offer">
       <div class="wrap">
-        <h2 id="offer-heading">What’s Inside Project Mass</h2>
-        <p class="lead">Everything you actually need: plan, tracking, coaching, and accountability.</p>
-
-        <div class="grid-3" role="list">
-          <div class="feature" role="listitem">
+        <h2>What You Get Inside Project Mass</h2>
+        <p class="lead">Everything you need: plan, nutrition setup, daily checks and coaching — no guesswork.</p>
+        <div class="grid-3">
+          <div class="feature">
             <h4>Custom Training Plan</h4>
-            <p>Personalised program in the Strong app with clear weekly progression and technique checks.</p>
+            <p>Personalised program in the Strong app, built for your setup (gym / home / bodyweight), with progressive overload.</p>
           </div>
-
-          <div class="feature" role="listitem">
-            <h4>Nutrition & Meal Setup</h4>
-            <p>Macro + calorie targets, meal templates or full meal plans, and Cronometer tracking.</p>
+          <div class="feature">
+            <h4>Nutrition & Macro Setup</h4>
+            <p>Daily calorie and macro targets, meal-plan or template, and Cronometer tracking for transparency.</p>
           </div>
-
-          <div class="feature" role="listitem">
+          <div class="feature">
             <h4>Daily Accountability</h4>
-            <p>Daily check-ins, WhatsApp accountability, and adherence scoring so you can’t hide from progress.</p>
+            <p>Daily check-ins via WhatsApp + habit tracking to keep you consistent and on track.</p>
           </div>
-
-          <div class="feature" role="listitem">
-            <h4>Weekly Coaching</h4>
-            <p>Weekly review calls, progress photos, and data-driven adjustments.</p>
+          <div class="feature">
+            <h4>Weekly Coaching Calls</h4>
+            <p>Progress review, adjustments, strength tracking and guidance to make sure you grow.</p>
           </div>
-
-          <div class="feature" role="listitem">
-            <h4>Onboarding & Baselines</h4>
-            <p>Full intake, baseline strength tests, photos, and explicit expectations.</p>
+          <div class="feature">
+            <h4>Baseline & Onboarding Setup</h4>
+            <p>Initial profile, strength test, photos and clear expectations so you start right.</p>
           </div>
-
-          <div class="feature" role="listitem">
-            <h4>Mindset & Habits</h4>
-            <p>Daily habit-building, sleep rules, and stress management to protect recovery.</p>
+          <div class="feature">
+            <h4>Mindset & Lifestyle Guidance</h4>
+            <p>Sleep / recovery / habit coaching to complement training and ensure real results.</p>
           </div>
         </div>
-
-        <div class="center" style="margin-top:20px">
-          <a class="btn-primary" href="#apply">Start Project Mass</a>
-          <div class="micro">30-day action-based money-back guarantee</div>
+        <div class="center" style="margin-top:36px;">
+          <a class="cta-btn" href="#apply">Start Project Mass</a>
         </div>
       </div>
     </section>
 
-    <!-- PRICING -->
-    <section id="pricing" class="section alt" aria-labelledby="pricing-heading">
+    <section class="alt pricing" id="pricing">
       <div class="wrap">
-        <h2 id="pricing-heading">Guarantee & Spots</h2>
-        <p class="lead">Follow the plan, track daily, show up for weekly reviews. If you do the work and don’t see progress in 30 days, full refund.</p>
-
-        <div class="pricing-card" role="region">
-          <div class="price-tag" role="article" aria-label="Pricing">
-            <div class="price-title">Project Mass — 16 weeks</div>
-            <div class="price-amount">AUD $XXX / month</div>
-            <a class="btn-primary" href="#apply" style="display:inline-block;margin-top:12px">Apply Now</a>
-          </div>
-          <ul class="price-features" aria-label="Included features">
-            <li>Daily check-ins & WhatsApp accountability</li>
-            <li>Weekly coaching calls</li>
-            <li>Custom Strong plan & Cronometer setup</li>
-          </ul>
+        <h2>Guarantee & Availability</h2>
+        <p class="lead">Follow the plan, track daily, show up for calls. If you do the work and don’t see results within 30 days — full refund guaranteed.</p>
+        <div class="price-box">
+          <div class="price-title">Project Mass — 16 Weeks</div>
+          <div class="price-amount">AUD $XXX / month</div>
+          <a class="price-btn" href="#apply">Apply Now</a>
         </div>
       </div>
     </section>
 
-    <!-- FAQ -->
-    <section id="faq" class="section" aria-labelledby="faq-heading">
+    <section id="faq">
       <div class="wrap">
-        <h2 id="faq-heading">FAQ</h2>
-        <details style="margin-bottom:10px;padding:12px;background:rgba(255,255,255,0.02);border-radius:8px">
-          <summary style="font-weight:700;cursor:pointer">How fast can I expect to gain weight?</summary>
-          <p style="margin:8px 0 0">Most clients see clear changes within 8–12 weeks. Our targets are 4–8kg in 16 weeks when you follow the plan.</p>
+        <h2>FAQ</h2>
+
+        <details>
+          <summary>How fast can I expect to gain weight?</summary>
+          <p>With consistent adherence — many see 4–6 kg in 12 weeks. 4–8 kg is realistic in 16 weeks when you follow the system strictly.</p>
         </details>
 
-        <details style="margin-bottom:10px;padding:12px;background:rgba(255,255,255,0.02);border-radius:8px">
-          <summary style="font-weight:700;cursor:pointer">Do I need a gym?</summary>
-          <p style="margin:8px 0 0">No — plans are built for gym, home gym, or bodyweight options based on your setup.</p>
+        <details>
+          <summary>Do I need a gym?</summary>
+          <p>No. Plans are tailored to your setup: gym, home gym or bodyweight.</p>
         </details>
 
-        <details style="margin-bottom:10px;padding:12px;background:rgba(255,255,255,0.02);border-radius:8px">
-          <summary style="font-weight:700;cursor:pointer">What apps do I need?</summary>
-          <p style="margin:8px 0 0">Strong (training) and Cronometer (nutrition). You’ll connect these during onboarding or I can create accounts if preferred.</p>
+        <details>
+          <summary>Which apps do I need?</summary>
+          <p>You’ll use Strong (training) and Cronometer (nutrition). Accounts are connected for tracking and accountability.</p>
         </details>
+
       </div>
     </section>
 
-    <!-- APPLY anchor -->
-    <section id="apply" class="section alt" aria-labelledby="apply-heading">
-      <div class="wrap apply-wrap">
-        <h2 id="apply-heading">Apply for Project Mass</h2>
-        <p class="lead">Limited spots. Fill the onboarding form and I’ll review your application.</p>
-        <div class="center" style="margin-top:12px">
-          <a class="btn-secondary" href="https://your-form-link-here" target="_blank" rel="noopener">Complete Onboarding Form</a>
-        </div>
+    <section class="alt" id="apply">
+      <div class="wrap center">
+        <h2>Apply for Project Mass</h2>
+        <p class="lead">Limited spots. Complete the onboarding form and I’ll personally review your application.</p>
+        <a class="cta-btn" href="https://your-form-link-here" target="_blank" rel="noopener">Complete Onboarding Form</a>
       </div>
     </section>
 
   </main>
 
-  <footer class="site-footer" role="contentinfo">
-    <div class="wrap">
-      <div class="foot-inner">
-        <div>© <span id="year"></span> Project Mass</div>
-        <div>Contact: <a href="mailto:you@example.com" style="color:var(--muted)">you@example.com</a></div>
-      </div>
+  <footer>
+    <div class="wrap center" style="padding:24px 0; color:#777;">
+      © <span id="yr"></span> Project Mass — All rights reserved.
     </div>
   </footer>
 
   <script>
-    // Smooth-scroll for internal links
-    document.addEventListener('DOMContentLoaded', function(){
-      document.querySelectorAll('a[href^="#"]').forEach(function(a){
-        a.addEventListener('click', function(e){
-          var target = document.querySelector(this.getAttribute('href'));
-          if(target){
-            e.preventDefault();
-            target.scrollIntoView({behavior:'smooth', block:'start'});
-          }
-        });
+    document.getElementById('yr').textContent = new Date().getFullYear();
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const t = document.querySelector(a.getAttribute('href'));
+        if(t){ e.preventDefault(); t.scrollIntoView({behavior:'smooth'}); }
       });
-      document.getElementById('year').textContent = new Date().getFullYear();
-      console.log('Project Mass live');
     });
   </script>
+
 </body>
 </html>
 
